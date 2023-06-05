@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body class="fundo">
+    <div class="container">
+        <h1 id="texto" class="text-center mt-5">Biblioteca</h1>
+        <div class="text-center mt-4">
+            <a href="/books/add" class="btn btn-light">Adicionar Livros</a>
+            <a href="/students/add" class="btn btn-light">Adicionar estudantes</a>
+            <a href="/employees/add" class="btn btn-light">Adicionar Funcionários</a>
+            <a href="/loan" class="btn btn-light">Locar Livros</a>
+            <a href="/return" class="btn btn-light">Devolver Livros</a>
+            <a href="/report" class="btn btn-light">Gerar Relatórios</a>
+            <a href="/lista_livros" class="btn btn-light">Lista de Livros</a>
+            {% if 'user_id' in session %}
+                <a href="/logout" class="btn btn-danger">Sair</a>
+            {% else %}
+                <a href="/login" class="btn btn-success">Login</a>
+            {% endif %}
+        </div>
+    </div>
+</body>
+
+</html>

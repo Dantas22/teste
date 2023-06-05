@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Adicionar Livro</h2>
+  <form method="post" action="/books/add">
+    <div class="form-group">
+      <label for="title">Título:</label>
+      <input type="text" class="form-control" id="title" name="title" required>
+    </div>
+    <div class="form-group">
+      <label for="publisher">Editora:</label>
+      <input type="text" class="form-control" id="publisher" name="publisher" required>
+    </div>
+    <div class="form-group">
+      <label for="year">Ano:</label>
+      <input type="number" class="form-control" id="year" name="year" required>
+    </div>
+    <div class="form-group">
+      <label for="total_quantity">Quantidade Total:</label>
+      <input type="number" class="form-control" id="total_quantity" name="total_quantity" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Adicionar</button>
+  </form>
+{% endblock %}

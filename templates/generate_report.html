@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Gerar Relatório</h2>
+  <form method="post" action="/report">
+    <div class="form-group">
+      <label for="start_date">Data de Início:</label>
+      <input type="date" class="form-control" id="start_date" name="start_date" required>
+    </div>
+    <div class="form-group">
+      <label for="end_date">Data de Fim:</label>
+      <input type="date" class="form-control" id="end_date" name="end_date" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Gerar Relatório</button>
+  </form>
+{% endblock %}

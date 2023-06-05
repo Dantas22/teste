@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Devolução de Livro</h2>
+  <form method="post" action="/return">
+    <div class="form-group">
+      <label for="student_id">Aluno:</label>
+      <select class="form-control" id="student_id" name="student_id" required>
+        {% for student in students %}
+          <option value="{{ student.id }}">{{ student.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="book_id">Livro:</label>
+      <select class="form-control" id="book_id" name="book_id" required>
+        {% for book in books %}
+          <option value="{{ book.id }}">{{ book.title }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Devolver Livro</button>
+  </form>
+{% endblock %}
